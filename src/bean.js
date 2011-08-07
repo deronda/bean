@@ -1,4 +1,4 @@
-!function (context) {
+!function (context, document) {
   var __uid = 1, registry = {}, collected = {},
       overOut = /over|out/,
       namespace = /[^\.]*(?=\..*)\.|.*/,
@@ -7,7 +7,7 @@
       attachEvent = 'attachEvent',
       removeEvent = 'removeEventListener',
       detachEvent = 'detachEvent',
-      doc = context.document || {},
+      doc = document || {},
       root = doc.documentElement || {},
       W3C_MODEL = root[addEvent],
       eventSupport = W3C_MODEL ? addEvent : attachEvent,
@@ -321,4 +321,4 @@
     (module.exports = bean) :
     (context['bean'] = bean);
 
-}(this);
+}(this, document);
